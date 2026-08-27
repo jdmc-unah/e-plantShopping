@@ -11,6 +11,7 @@ export const CartSlice = createSlice({
       const isAddedToCart = state.items.find( (item) =>  item.name === action.payload.name) !== undefined
       
       if (!isAddedToCart) {
+        action.payload.quantity = 1;
         state.items.push(action.payload)  
       }      
     
